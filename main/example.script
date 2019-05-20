@@ -1,0 +1,22 @@
+local bit46 = require "bit46.bit46"
+
+local a = 0x3FFFFFFFFFFF
+local b = 0x3AF3107A40D3
+
+function init(self)
+	local band = bit46.band(a, b)
+	local bor = bit46.bor(a, b)
+	local bxor = bit46.bxor(a, b)
+	local bnot = bit46.bnot(a)
+	local swap = bit46.swap(b)
+	pprint("a", bit46.to_ary(a))
+	pprint("b", bit46.to_ary(b))
+	pprint("band(a, b)", bit46.to_ary(band))
+	pprint("bor(a, b)", bit46.to_ary(bor))
+	pprint("bxor(a, b)", bit46.to_ary(bxor))
+	pprint("bnot(a)", bit46.to_ary(bnot))
+	pprint("swap(b)", bit46.to_ary(swap))
+	pprint("b==band(a,b)", b == band)
+	pprint("a==bor(a,b)", a == bor)
+	pprint("0==bnot(a)", 0 == bnot)
+end
