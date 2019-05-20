@@ -25,7 +25,7 @@ M.rshift = function(num, bits)
 end
 
 M.bnot = function(v1)
-	return M.bor(bit.band(bit.bnot(v1), b), M.lshift(bit.band(bit.bnot(M.rshift(v1, 31)), c), 31))
+	return bit.band(bit.bnot(v1), b) + M.lshift(bit.band(bit.bnot(M.rshift(v1, 31)), c), 31)
 end
 
 M.to_num = function(ary)
