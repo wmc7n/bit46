@@ -55,4 +55,12 @@ M.swap = function(num, bits)
 	return M.to_num(t)
 end
 
+M.swap_ary = function(ary)
+	local t = {}
+	for i=1,#ary do
+		table.insert(t, ary[#ary-i+1])
+	end
+	return t
+end
+
 return M
